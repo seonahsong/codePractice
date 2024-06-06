@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘의 날씨</title>
+  <link rel="stylesheet" href="./css/weather.css">
+  <script src="./js/weather.js"></script>
+  <!-- 배경 넣기 -->
+  <style>
+    body {
+      background-image: url('./imgs/front/background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: scroll;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="today">
+    <h1>오늘의 날씨</h1>
+    <!--placeholder는 "검색"을 지웠을때 나타남 -->
+    <input type="text" value="오늘의 날씨" placeholder="검색 해보세요!" />
+    <input type="checkbox" /> 봄
+    <!-- label은 글자 클릭가능, checked는 선택된 상태 -->
+    <label>
+      <input type="checkbox" checked /> 여름
+    </label>
+    <!-- radio는 선택지 중에 하나만을 고를수 있게 함 -->
+    <input type="radio" name="season" /> 가을
+    <label>
+      <input type="radio" name="season" /> 겨울
+    </label>
+  </div>
+
+  <!-- table옆에 ul을 배치하기 위해 div class(전역속성)의 이름을 정의하고 묶어줌 -->
+  <div class="container">
+    <!-- table>tr*2>td*4 -->
+    <table>
+      <tr>
+        <td class="a">A</td>
+        <td class="b">B</td>
+        <td class="C">C</td>
+        <td class="D">D</td>
+      </tr>
+      <tr>
+        <td class="a">E</td>
+        <td class="b">F</td>
+        <td class="C">G</td>
+        <td class="D">H</td>
+      </tr>
+    </table>
+    <!-- ul>li*4, ol로 하면 숫자 순서로 생성. -->
+    <ul class="weather">
+      <li class="clean">A 맑음</li>
+      <li class="cloudy">B 흐림</li>
+      <li class="windy">C 바람</li>
+      <li class="rain">D 비</li>
+    </ul>
+
+    <ul class="weather2">
+      <div> ⦁ E 폭풍 </div>
+      <span> ⦁ F 안개 </span>
+      <div> ⦁ G 미세먼지</div>
+      <span> ⦁ H 눈 </span>
+    </ul>
+  </div>
+
+  <div>
+    <img src="./imgs/front/rain.webp" alt="비">
+  </div>
+
+  <div class="go">바로가기 링크</div>
+
+  <!-- href는 경로, target을 _blank처리하면 새창에서 열수 있음. title은 마우스 갖다대면 설명 미리보임 -->
+  <div class="site">
+    <a href="https://www.youtube.com/musicpremium" target"_blank" title="유튜브 뮤직" class="site3">YouTube</a>
+    <a href="https://www.melon.com/" target"_blank" title="멜론" class="site2">Melon</a>
+    <a href="https://music.bugs.co.kr/" target"_blank" title="벅스 뮤직" class="site4">Bugs</a>
+    <a href="https://vibe.naver.com/" target"_blank" title="바이브" class="site1">VIBE</a> <br>
+  </div>
+
+  <!--data-js에 연결하기위해 :  -->
+  <div data-song-recommend="노래추천"> <br> 노래추천
+  </div>
+  <!-- tabindex="-1" box가 포커스되게 해줌 -->
+  <div class="box" tabindex="-1">
+    🎧 &nbsp;
+  </div>
+  <!--p:문장, 전역속성 class : 중복가능 이름 지정, id : 고유이름 지정, css #.이름 -->
+  <p class="lyrics">
+    <span class="select">여름</span> 날 <span class="green">비</span>. 오늘의 날씨에 어울리는 노래 추천 <br> 
+    <span id="pink"> &nbsp; 헤이즈 - 비도오고 그래서</span> 
+  </p>
